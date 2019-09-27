@@ -5,10 +5,10 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Categoría A o WRO
+                    Categoría B o HARDWARE LIBRE
                 </h1>
-                <p class="text-white link-nav"><a >Inicial </a> <span class="lnr lnr-arrow-right"></span>  <a > Equipos de 2 estudiantes con edades hasta 10 años (no deben cumplir 11
-                        años en 2019) y un tutor o tutora. </a></p>
+                <p class="text-white link-nav"><a >Intermedia </a> <span class="lnr lnr-arrow-right"></span>  <a > Equipos de hasta 2 estudiantes, con edades entre 11 y 14 años (no deben
+                        cumplir 15 años el 2019) y un tutor o tutora.  </a></p>
             </div>
         </div>
     </div>
@@ -131,52 +131,28 @@
             <div class="modal-body">
                 <form id="notas">
                     <div class="form-group">
-                        <label for="p1">Una pieza de fruta totalmente retirada de su dispositivo de soporte.</label>
+                        <label for="p1">LINEA CONTINUA (1 PUNTO)</label>
                         <input type="number" class="form-control" id="p1" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">10 puntos por cada una.
-                            Total máximo: 40
-                        </small>
+
                     </div>
                     <div class="form-group">
-                        <label for="p2">Una pieza de fruta perfecta (pelota roja) completamente dentro de la Tienda de Alimentos (área roja). El robot ha transportado la fruta roja al área roja.</label>
+                        <label for="p2">LINEA DISCONTINUA (2 PUNTOS)</label>
                         <input type="number" class="form-control" id="p2" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">10 puntos por cada una.
-                            Total máximo: 20
-                        </small>
+
                     </div>
                     <div class="form-group">
-                        <label for="p3">Una pieza de fruta perfecta (pelota roja) completamente dentro de la Tienda de Alimentos (área roja). La fruta fue llevada manualmente desde un Área de Inicio a un área roja.</label>
+                        <label for="p3">OBSTÁCULO (3 PUNTOS)</label>
                         <input type="number" class="form-control" id="p3" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">5 puntos por cada una.
-                            Total máximo: 10
-                        </small>
+
                     </div>
                     <div class="form-group">
-                        <label for="p4">Una pieza de fruta fea (pelota azul) completamente dentro de la Fábrica de Jugos (área azul). El robot ha transportado la fruta azul al área azul.</label>
-                        <input type="number" class="form-control" id="p4" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">10 puntos por cada una.
-                            Total máximo: 20
-                        </small>
+                        <label for="p4">TIEMPO (hh:mm:ss)</label>
+                        <input type="text" class="form-control" id="p4" placeholder="00">
+
                     </div>
                     <div class="form-group">
-                        <label for="p5">Una pieza de fruta fea (pelota azul) completamente dentro de la Fábrica de Jugos (área azul). La fruta fue llevada manualmente desde un Área de Inicio a un área azul.</label>
+                        <label for="p5">Examen teorico</label>
                         <input type="number" class="form-control" id="p5" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">5 puntos por cada una.
-                            Total máximo: 10
-                        </small>
-                    </div>
-                    <div class="form-group">
-                        <label for="p6">Cada dispositivo de soporte no ha sido movido completamente fuera del Área de Granja donde estuvo colocado originalmente. Sólo se obtendrá estos puntos si el puntaje por las otras misiones es mayor a cero.</label>
-                        <input type="number" class="form-control" id="p6" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">5 puntos por cada una.
-                            Total máximo: 20
-                        </small>
-                    </div>
-                    <div class="form-group">
-                        <label for="p7">El robot se detiene completamente dentro del Área de Inicio Circular. Sólo se obtendrá estos puntos si el puntaje por las otras misiones es mayor a cero.</label>
-                        <input type="number" class="form-control" id="p7" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">20 puntos.
-                        </small>
                     </div>
 
                     <div class="modal-footer">
@@ -216,7 +192,7 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore().collection("ainicial");
+        var db = firebase.firestore().collection("bintermedia");
         $('#formulario').submit(function (e) {
             db.add({
                 colegio: $('#colegio').val(),
@@ -249,9 +225,7 @@
                 p2:$('#p2').val(),
                 p3:$('#p3').val(),
                 p4:$('#p4').val(),
-                p5:$('#p5').val(),
-                p6:$('#p6').val(),
-                p7:$('#p7').val()
+                p5:$('#p5').val()
             }).then(refDoc => {
                 toastr.success('Notas guardadas!');
                 $('#notas').modal('hide');
@@ -304,8 +278,6 @@
                         $('#p3').val(doc.data().p3);
                         $('#p4').val(doc.data().p4);
                         $('#p5').val(doc.data().p5);
-                        $('#p6').val(doc.data().p6);
-                        $('#p7').val(doc.data().p7);
                     });
                     e.preventDefault();
                 });

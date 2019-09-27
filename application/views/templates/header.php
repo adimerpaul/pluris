@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 </head>
 <body>
@@ -46,6 +47,17 @@
                             <li><a href="product-details.html">Avanzada</a></li>
                         </ul>
                     </li>
+                    <li class="menu-has-children" style="color: white"><a >Categoria B</a>
+                        <ul>
+                            <li><a href="<?=base_url()?>Bintermedia">Intermedia</a></li>
+                            <li><a href="product-details.html">Avanzada</a></li>
+                        </ul>
+                    </li>
+                    <?php
+                    if (isset($_SESSION['user'])){
+                        echo "<li><a href='".base_url()."Admin/logout'>Salir </a></li>";
+                    }
+                    ?>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
