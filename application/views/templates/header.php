@@ -42,15 +42,22 @@
                     <li class="menu-has-children" style="color: white"><a >Categoria A</a>
                         <ul>
                             <li><a href="<?=base_url()?>Ainicial">Inicial</a></li>
-                            <li><a href="product-details.html">Principiante</a></li>
-                            <li><a href="product-details.html">Intermedia</a></li>
-                            <li><a href="product-details.html">Avanzada</a></li>
+                            <li><a href="<?=base_url()?>Aprincipiante">Principiante</a></li>
+                            <li><a href="<?=base_url()?>Aintermedia">Intermedia</a></li>
+                            <li><a href="<?=base_url()?>Aavanzada">Avanzada</a></li>
                         </ul>
                     </li>
                     <li class="menu-has-children" style="color: white"><a >Categoria B</a>
                         <ul>
                             <li><a href="<?=base_url()?>Bintermedia">Intermedia</a></li>
-                            <li><a href="product-details.html">Avanzada</a></li>
+                            <li><a href="<?=base_url()?>Bavanzada">Avanzada</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-has-children" style="color: white"><a >Categoria C</a>
+                        <ul>
+                            <li><a href="<?=base_url()?>Cprincipiante">Principiante</a></li>
+                            <li><a href="<?=base_url()?>Cintermedia">Intermedia</a></li>
+                            <li><a href="<?=base_url()?>Cavanzada">Avanzada</a></li>
                         </ul>
                     </li>
                     <?php

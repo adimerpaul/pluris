@@ -8,7 +8,7 @@ function index(){
 function login(){
     $user=$_POST['user'];
     $clave=$_POST['clave'];
-    if ( $clave=='sisinf'){
+    if ( $clave=='sisinf2019'){
         $_SESSION['user']=$user;
         header('Location: '.base_url());
     }else{

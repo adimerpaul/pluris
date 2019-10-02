@@ -12,10 +12,11 @@ if (isset($_SESSION['user'])){
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Categoría B o HARDWARE LIBRE
+                    Categoría C o CONSTRUCTORES
                 </h1>
-                <p class="text-white link-nav"><a >Intermedia </a> <span class="lnr lnr-arrow-right"></span>  <a > Equipos de hasta 2 estudiantes, con edades entre 11 y 14 años (no deben
-                        cumplir 15 años el 2019) y un tutor o tutora. </a></p>
+                <p class="text-white link-nav"><a >Avanzada </a> <span class="lnr lnr-arrow-right"></span>  <a >Equipos de hasta 2 estudiantes, con edades entre 16 y 21 años (no deben
+                        cumplir 22 años el 2019). Los proyectos deben ser del tipo electromecánico, mecatrónico o
+                        electromagnético</a></p>
             </div>
         </div>
     </div>
@@ -139,7 +140,7 @@ if (isset($_SESSION['user'])){
             <div class="modal-body">
                 <form id="notas">
                     <div class="form-group">
-                        <label for="p1">LINEA CONTINUA (1 PUNTO)</label>
+                        <label for="p1">INFORME       (20 PUNTOS)</label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p102" placeholder="00"></div>
@@ -149,7 +150,7 @@ if (isset($_SESSION['user'])){
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p2">LINEA DISCONTINUA (2 PUNTOS)</label>
+                        <label for="p2">CREATIVIDAD (20 PUNTOS)</label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p2" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p202" placeholder="00"></div>
@@ -159,7 +160,7 @@ if (isset($_SESSION['user'])){
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p3">OBSTÁCULO (3 PUNTOS)</label>
+                        <label for="p3">MATERIAL UTILIZADO      (20 PUNTOS)</label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p3" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p302" placeholder="00"></div>
@@ -169,7 +170,7 @@ if (isset($_SESSION['user'])){
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p4">PUNTAJE FINAL</label>
+                        <label for="p4">INSPIRACIÓN Y MOTIVACIÓN (20 PUNTOS)</label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p4" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p402" placeholder="00"></div>
@@ -179,21 +180,21 @@ if (isset($_SESSION['user'])){
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p5">Examen teorico</label>
+                        <label for="p5">AUTORÍA Y PRODUCCIÓN (20 PUNTOS)</label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p5" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p502" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p503" placeholder="00"></div>
                         </div>
-                        <!--                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 15.-->
+                        <!--                        <small id="emailHelp" class="form-text text-muted">Total 10.-->
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p6">TIEMPO (hh:mm:ss)</label>
+                        <label for="p6">PUNTAJE FINAL</label>
                         <div class="row">
-                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p6" placeholder="00"></div>
-                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p602" placeholder="00"></div>
-                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p603" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p6" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p602" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p603" placeholder="00"></div>
                         </div>
                         <!--                        <small id="emailHelp" class="form-text text-muted">Total 10.-->
                         </small>
@@ -235,7 +236,7 @@ if (isset($_SESSION['user'])){
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore().collection("bintermedia");
+        var db = firebase.firestore().collection("cavanzada");
         $('#formulario').submit(function (e) {
             db.add({
                 colegio: $('#colegio').val(),
@@ -262,6 +263,7 @@ if (isset($_SESSION['user'])){
         $('#notas').submit(function (e) {
 
             db.doc(id).set(
+                //     console.log(
                 {
                     colegio: colegio,
                     estudiante1: estudiante1,
@@ -285,6 +287,7 @@ if (isset($_SESSION['user'])){
                     p503:$('#p503').val(),
                     p603:$('#p603').val(),
                 }
+                // );
             ).then(refDoc => {
                 toastr.success('Notas guardadas!');
                 $('#notas').modal('hide');
@@ -306,19 +309,22 @@ if (isset($_SESSION['user'])){
                         parseInt( doc.data().p2)+
                         parseInt( doc.data().p3)+
                         parseInt( doc.data().p4)+
-                        parseInt( doc.data().p5);
+                        parseInt( doc.data().p5)+
+                        parseInt( doc.data().p6);
                     puntos2=puntos2+
                         parseInt( doc.data().p102)+
                         parseInt( doc.data().p202)+
                         parseInt( doc.data().p302)+
                         parseInt( doc.data().p402)+
-                        parseInt( doc.data().p502);
+                        parseInt( doc.data().p502)+
+                        parseInt( doc.data().p602);
                     puntos3=puntos3+
                         parseInt( doc.data().p103)+
                         parseInt( doc.data().p203)+
                         parseInt( doc.data().p303)+
                         parseInt( doc.data().p403)+
-                        parseInt( doc.data().p503);
+                        parseInt( doc.data().p503)+
+                        parseInt( doc.data().p603);
                     table.row.add( [
                         doc.data().colegio,
                         '1-'+doc.data().estudiante1+' <br> 2-'+doc.data().estudiante2,
@@ -362,7 +368,6 @@ if (isset($_SESSION['user'])){
                         $('#p4').val(doc.data().p4);
                         $('#p5').val(doc.data().p5);
                         $('#p6').val(doc.data().p6);
-
                         $('#p102').val(doc.data().p102);
                         $('#p202').val(doc.data().p202);
                         $('#p302').val(doc.data().p302);
@@ -407,7 +412,6 @@ if (isset($_SESSION['user'])){
                         $('#p403').val(doc.data().p403);
                         $('#p503').val(doc.data().p503);
                         $('#p603').val(doc.data().p603);
-
                     }
 
 

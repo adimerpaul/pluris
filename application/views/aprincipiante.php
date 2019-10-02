@@ -12,10 +12,10 @@ if (isset($_SESSION['user'])){
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Categoría B o HARDWARE LIBRE
+                    Categoría A o WRO
                 </h1>
-                <p class="text-white link-nav"><a >Intermedia </a> <span class="lnr lnr-arrow-right"></span>  <a > Equipos de hasta 2 estudiantes, con edades entre 11 y 14 años (no deben
-                        cumplir 15 años el 2019) y un tutor o tutora. </a></p>
+                <p class="text-white link-nav"><a >principiante </a> <span class="lnr lnr-arrow-right"></span>  <a > Equipos de 2 estudiantes con edades hasta 12 años (no deben cumplir
+                        13 años en 2019) y un tutor o tutora.  </a></p>
             </div>
         </div>
     </div>
@@ -139,63 +139,138 @@ if (isset($_SESSION['user'])){
             <div class="modal-body">
                 <form id="notas">
                     <div class="form-group">
-                        <label for="p1">LINEA CONTINUA (1 PUNTO)</label>
+                        <label for="p1">Pasajero (adulto o niño) Rojo/Amarillo/Verde/Blanco <br>
+                            •	De pie en el área correcta y <br>
+                            •	Completamente dentro del área
+                        </label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p102" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p103" placeholder="00"></div>
                         </div>
-                        <!--                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 15.-->
+                        <small id="emailHelp" class="form-text text-muted">Cada una 25. Total 125.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p2">LINEA DISCONTINUA (2 PUNTOS)</label>
+                        <label for="p2">Pasajero (adulto o niño) Rojo/Amarillo/Verde/Blanco <br>
+                            •	Tumbado en el área correcta y <br>
+                            •	Completamente dentro del área.
+                        </label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p2" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p202" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p203" placeholder="00"></div>
                         </div>
-                        <!--                        <small id="emailHelp" class="form-text text-muted">Total 5.-->
+                        <small id="emailHelp" class="form-text text-muted">Cada una 15. Total 75.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p3">OBSTÁCULO (3 PUNTOS)</label>
+                        <label for="p3">Pasajero (adulto o niño) Rojo/Amarillo/Verde/Blanco <br>
+                            •	De pie o Tumbado en el área correcta pero <br>
+                            •	Parcialmente dentro del área. <br>
+                        </label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p3" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p302" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p303" placeholder="00"></div>
                         </div>
-                        <!--                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 15.-->
+                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 25.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p4">PUNTAJE FINAL</label>
+                        <label for="p4">Pasajero (adulto o niño) Rojo/Amarillo/Verde/Blanco <br>
+                            •	De pie en un área incorrecta y <br>
+                            •	Completamente dentro del área, pero siempre y cuando ésta no sea la propia área de inicio del pasajero, ni el Área de Estación de Recarga ni el Área de Inicio y Fin del robot
+                        </label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p4" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p402" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p403" placeholder="00"></div>
                         </div>
-                        <!--                        <small id="emailHelp" class="form-text text-muted">Total 10.-->
+                        <small id="emailHelp" class="form-text text-muted">Cada una 10. Total 50.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p5">Examen teorico</label>
+                        <label for="p5">Pasajero (adulto o niño) Rojo/Amarillo/Verde/Blanco <br>
+                            •	Tumbado en un área incorrecta y <br>
+                            •	Completamente dentro del área, pero siempre y cuando ésta no sea la propia área de inicio del pasajero, ni el Área de Estación de Recarga ni el Área de Inicio y Fin del robot
+                        </label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p5" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p502" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p503" placeholder="00"></div>
                         </div>
-                        <!--                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 15.-->
+                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 25.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p6">TIEMPO (hh:mm:ss)</label>
+                        <label for="p6">Pasajero azul (adulto o niño, según el sorteo) sigue de pie en su posición inicial en el área verde. (sólo si se ganaron puntos por otros pasajeros)</label>
                         <div class="row">
-                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p6" placeholder="00"></div>
-                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p602" placeholder="00"></div>
-                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p603" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p6" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p602" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p603" placeholder="00"></div>
                         </div>
-                        <!--                        <small id="emailHelp" class="form-text text-muted">Total 10.-->
+                        <small id="emailHelp" class="form-text text-muted">Total 15.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p7">Un bloque de batería está completamente dentro del Área de Batería</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p7" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p702" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p703" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 15.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p8">Un bloque de batería está parcialmente dentro del Área de Batería</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p8" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p802" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p803" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 5.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p9">El robot se detiene completamente dentro de Área de Inicio y Fin (sólo si se ganaron puntos por pasajeros)</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p9" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p902" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p903" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 10.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p10">Penalización: El robot daña o desplaza una pared de su posición inicial </label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p10" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1002" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1003" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Cada una -5. Total -10.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p11">Los estudiantes construyeron y programaron su propio robot. Si hubiera razones suficientes para afirmar que se trata de un plagio. El equipo será desclasificado según reglas generales.</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p11" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1102" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1103" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 72.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p12">Regla sopresa</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p12" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1202" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1203" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">De 0 a 30.
                         </small>
                     </div>
                     <div class="modal-footer">
@@ -235,7 +310,7 @@ if (isset($_SESSION['user'])){
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore().collection("bintermedia");
+        var db = firebase.firestore().collection("aprincipiante");
         $('#formulario').submit(function (e) {
             db.add({
                 colegio: $('#colegio').val(),
@@ -272,18 +347,36 @@ if (isset($_SESSION['user'])){
                     p4:$('#p4').val(),
                     p5:$('#p5').val(),
                     p6:$('#p6').val(),
+                    p7:$('#p7').val(),
+                    p8:$('#p8').val(),
+                    p9:$('#p9').val(),
+                    p10:$('#p10').val(),
+                    p11:$('#p11').val(),
+                    p12:$('#p12').val(),
                     p102:$('#p102').val(),
                     p202:$('#p202').val(),
                     p302:$('#p302').val(),
                     p402:$('#p402').val(),
                     p502:$('#p502').val(),
                     p602:$('#p602').val(),
+                    p702:$('#p702').val(),
+                    p802:$('#p802').val(),
+                    p902:$('#p902').val(),
+                    p1002:$('#p1002').val(),
+                    p1102:$('#p1102').val(),
+                    p1202:$('#p1202').val(),
                     p103:$('#p103').val(),
                     p203:$('#p203').val(),
                     p303:$('#p303').val(),
                     p403:$('#p403').val(),
                     p503:$('#p503').val(),
                     p603:$('#p603').val(),
+                    p703:$('#p703').val(),
+                    p803:$('#p803').val(),
+                    p903:$('#p903').val(),
+                    p1003:$('#p1003').val(),
+                    p1103:$('#p1103').val(),
+                    p1203:$('#p1203').val(),
                 }
             ).then(refDoc => {
                 toastr.success('Notas guardadas!');
@@ -296,7 +389,6 @@ if (isset($_SESSION['user'])){
         function datos(){
             db.onSnapshot(function(querySnapshot) {
                 table.clear().draw();
-
                 querySnapshot.forEach(function(doc) {
                     var puntos=0;
                     var puntos2=0;
@@ -306,19 +398,40 @@ if (isset($_SESSION['user'])){
                         parseInt( doc.data().p2)+
                         parseInt( doc.data().p3)+
                         parseInt( doc.data().p4)+
-                        parseInt( doc.data().p5);
+                        parseInt( doc.data().p5)+
+                        parseInt( doc.data().p6)+
+                        parseInt( doc.data().p7)+
+                        parseInt( doc.data().p8)+
+                        parseInt( doc.data().p9)+
+                        parseInt( doc.data().p10)+
+                        parseInt( doc.data().p11)+
+                        parseInt( doc.data().p12);
                     puntos2=puntos2+
                         parseInt( doc.data().p102)+
                         parseInt( doc.data().p202)+
                         parseInt( doc.data().p302)+
                         parseInt( doc.data().p402)+
-                        parseInt( doc.data().p502);
+                        parseInt( doc.data().p502)+
+                        parseInt( doc.data().p602)+
+                        parseInt( doc.data().p702)+
+                        parseInt( doc.data().p802)+
+                        parseInt( doc.data().p902)+
+                        parseInt( doc.data().p1002)+
+                        parseInt( doc.data().p1102)+
+                        parseInt( doc.data().p1202);
                     puntos3=puntos3+
                         parseInt( doc.data().p103)+
                         parseInt( doc.data().p203)+
                         parseInt( doc.data().p303)+
                         parseInt( doc.data().p403)+
-                        parseInt( doc.data().p503);
+                        parseInt( doc.data().p503)+
+                        parseInt( doc.data().p603)+
+                        parseInt( doc.data().p703)+
+                        parseInt( doc.data().p803)+
+                        parseInt( doc.data().p903)+
+                        parseInt( doc.data().p1003)+
+                        parseInt( doc.data().p1103)+
+                        parseInt( doc.data().p1203);
                     table.row.add( [
                         doc.data().colegio,
                         '1-'+doc.data().estudiante1+' <br> 2-'+doc.data().estudiante2,
@@ -362,6 +475,12 @@ if (isset($_SESSION['user'])){
                         $('#p4').val(doc.data().p4);
                         $('#p5').val(doc.data().p5);
                         $('#p6').val(doc.data().p6);
+                        $('#p7').val(doc.data().p7);
+                        $('#p8').val(doc.data().p8);
+                        $('#p9').val(doc.data().p9);
+                        $('#p10').val(doc.data().p10);
+                        $('#p11').val(doc.data().p11);
+                        $('#p12').val(doc.data().p12);
 
                         $('#p102').val(doc.data().p102);
                         $('#p202').val(doc.data().p202);
@@ -369,6 +488,12 @@ if (isset($_SESSION['user'])){
                         $('#p402').val(doc.data().p402);
                         $('#p502').val(doc.data().p502);
                         $('#p602').val(doc.data().p602);
+                        $('#p702').val(doc.data().p702);
+                        $('#p802').val(doc.data().p802);
+                        $('#p902').val(doc.data().p902);
+                        $('#p1002').val(doc.data().p1002);
+                        $('#p1102').val(doc.data().p1102);
+                        $('#p1202').val(doc.data().p1202);
 
                         $('#p103').val(doc.data().p103);
                         $('#p203').val(doc.data().p203);
@@ -376,6 +501,12 @@ if (isset($_SESSION['user'])){
                         $('#p403').val(doc.data().p403);
                         $('#p503').val(doc.data().p503);
                         $('#p603').val(doc.data().p603);
+                        $('#p703').val(doc.data().p703);
+                        $('#p803').val(doc.data().p803);
+                        $('#p903').val(doc.data().p903);
+                        $('#p1003').val(doc.data().p1003);
+                        $('#p1103').val(doc.data().p1103);
+                        $('#p1203').val(doc.data().p1203);
 
                     });
                     e.preventDefault();
@@ -393,6 +524,12 @@ if (isset($_SESSION['user'])){
                         $('#p4').val(doc.data().p4);
                         $('#p5').val(doc.data().p5);
                         $('#p6').val(doc.data().p6);
+                        $('#p7').val(doc.data().p7);
+                        $('#p8').val(doc.data().p8);
+                        $('#p9').val(doc.data().p9);
+                        $('#p10').val(doc.data().p10);
+                        $('#p11').val(doc.data().p11);
+                        $('#p12').val(doc.data().p12);
 
                         $('#p102').val(doc.data().p102);
                         $('#p202').val(doc.data().p202);
@@ -400,6 +537,12 @@ if (isset($_SESSION['user'])){
                         $('#p402').val(doc.data().p402);
                         $('#p502').val(doc.data().p502);
                         $('#p602').val(doc.data().p602);
+                        $('#p702').val(doc.data().p702);
+                        $('#p802').val(doc.data().p802);
+                        $('#p902').val(doc.data().p902);
+                        $('#p1002').val(doc.data().p1002);
+                        $('#p1102').val(doc.data().p1102);
+                        $('#p1202').val(doc.data().p1202);
 
                         $('#p103').val(doc.data().p103);
                         $('#p203').val(doc.data().p203);
@@ -407,6 +550,12 @@ if (isset($_SESSION['user'])){
                         $('#p403').val(doc.data().p403);
                         $('#p503').val(doc.data().p503);
                         $('#p603').val(doc.data().p603);
+                        $('#p703').val(doc.data().p703);
+                        $('#p803').val(doc.data().p803);
+                        $('#p903').val(doc.data().p903);
+                        $('#p1003').val(doc.data().p1003);
+                        $('#p1103').val(doc.data().p1103);
+                        $('#p1203').val(doc.data().p1203);
 
                     }
 

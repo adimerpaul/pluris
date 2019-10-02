@@ -14,8 +14,8 @@ if (isset($_SESSION['user'])){
                 <h1 class="text-white">
                     Categoría B o HARDWARE LIBRE
                 </h1>
-                <p class="text-white link-nav"><a >Intermedia </a> <span class="lnr lnr-arrow-right"></span>  <a > Equipos de hasta 2 estudiantes, con edades entre 11 y 14 años (no deben
-                        cumplir 15 años el 2019) y un tutor o tutora. </a></p>
+                <p class="text-white link-nav"><a >Avanzada </a> <span class="lnr lnr-arrow-right"></span>  <a >  Equipos de hasta 2 estudiantes, con edades entre 15 y 18 años (no deben
+                        cumplir 19 años el 2019) y un tutor o tutora.</a></p>
             </div>
         </div>
     </div>
@@ -169,7 +169,7 @@ if (isset($_SESSION['user'])){
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p4">PUNTAJE FINAL</label>
+                        <label for="p4">ZONA FINAL (10 PUNTOS)</label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p4" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p402" placeholder="00"></div>
@@ -179,21 +179,51 @@ if (isset($_SESSION['user'])){
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p5">Examen teorico</label>
+                        <label for="p5">CUBO PARCIAL (20 PUNTOS)</label>
                         <div class="row">
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p5" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p502" placeholder="00"></div>
                             <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p503" placeholder="00"></div>
                         </div>
+                        <!--                        <small id="emailHelp" class="form-text text-muted">Total 10.-->
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p6">CUBO COMPLETO (20 PUNTOS)</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p6" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p602" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p603" placeholder="00"></div>
+                        </div>
+                        <!--                        <small id="emailHelp" class="form-text text-muted">Total 10.-->
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p7">PUNTAJE FINAL</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p7" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p702" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p703" placeholder="00"></div>
+                        </div>
+                        <!--                        <small id="emailHelp" class="form-text text-muted">Total 10.-->
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p8">Examen teorico</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p8" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p802" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p803" placeholder="00"></div>
+                        </div>
                         <!--                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 15.-->
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p6">TIEMPO (hh:mm:ss)</label>
+                        <label for="p9">TIEMPO (hh:mm:ss)</label>
                         <div class="row">
-                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p6" placeholder="00"></div>
-                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p602" placeholder="00"></div>
-                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p603" placeholder="00"></div>
+                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p9"9placeholder="00"></div>
+                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p902" placeholder="00"></div>
+                            <div class="col-4"><input type="text" <?=$disabled?> class="form-control" id="p903" placeholder="00"></div>
                         </div>
                         <!--                        <small id="emailHelp" class="form-text text-muted">Total 10.-->
                         </small>
@@ -235,7 +265,7 @@ if (isset($_SESSION['user'])){
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore().collection("bintermedia");
+        var db = firebase.firestore().collection("bavanzada");
         $('#formulario').submit(function (e) {
             db.add({
                 colegio: $('#colegio').val(),
@@ -262,7 +292,8 @@ if (isset($_SESSION['user'])){
         $('#notas').submit(function (e) {
 
             db.doc(id).set(
-                {
+            //     console.log(
+                    {
                     colegio: colegio,
                     estudiante1: estudiante1,
                     estudiante2: estudiante2,
@@ -272,19 +303,29 @@ if (isset($_SESSION['user'])){
                     p4:$('#p4').val(),
                     p5:$('#p5').val(),
                     p6:$('#p6').val(),
+                    p7:$('#p7').val(),
+                    p8:$('#p8').val(),
+                    p9:$('#p9').val(),
                     p102:$('#p102').val(),
                     p202:$('#p202').val(),
                     p302:$('#p302').val(),
                     p402:$('#p402').val(),
                     p502:$('#p502').val(),
                     p602:$('#p602').val(),
+                    p702:$('#p702').val(),
+                    p802:$('#p802').val(),
+                    p902:$('#p902').val(),
                     p103:$('#p103').val(),
                     p203:$('#p203').val(),
                     p303:$('#p303').val(),
                     p403:$('#p403').val(),
                     p503:$('#p503').val(),
                     p603:$('#p603').val(),
+                    p703:$('#p703').val(),
+                    p803:$('#p803').val(),
+                    p903:$('#p903').val(),
                 }
+                // );
             ).then(refDoc => {
                 toastr.success('Notas guardadas!');
                 $('#notas').modal('hide');
@@ -306,19 +347,28 @@ if (isset($_SESSION['user'])){
                         parseInt( doc.data().p2)+
                         parseInt( doc.data().p3)+
                         parseInt( doc.data().p4)+
-                        parseInt( doc.data().p5);
+                        parseInt( doc.data().p5)+
+                        parseInt( doc.data().p6)+
+                        parseInt( doc.data().p7)+
+                        parseInt( doc.data().p8);
                     puntos2=puntos2+
                         parseInt( doc.data().p102)+
                         parseInt( doc.data().p202)+
                         parseInt( doc.data().p302)+
                         parseInt( doc.data().p402)+
-                        parseInt( doc.data().p502);
+                        parseInt( doc.data().p502)+
+                        parseInt( doc.data().p602)+
+                        parseInt( doc.data().p702)+
+                        parseInt( doc.data().p802);
                     puntos3=puntos3+
                         parseInt( doc.data().p103)+
                         parseInt( doc.data().p203)+
                         parseInt( doc.data().p303)+
                         parseInt( doc.data().p403)+
-                        parseInt( doc.data().p503);
+                        parseInt( doc.data().p503)+
+                        parseInt( doc.data().p603)+
+                        parseInt( doc.data().p703)+
+                        parseInt( doc.data().p803);
                     table.row.add( [
                         doc.data().colegio,
                         '1-'+doc.data().estudiante1+' <br> 2-'+doc.data().estudiante2,
@@ -362,6 +412,9 @@ if (isset($_SESSION['user'])){
                         $('#p4').val(doc.data().p4);
                         $('#p5').val(doc.data().p5);
                         $('#p6').val(doc.data().p6);
+                        $('#p7').val(doc.data().p7);
+                        $('#p8').val(doc.data().p8);
+                        $('#p9').val(doc.data().p9);
 
                         $('#p102').val(doc.data().p102);
                         $('#p202').val(doc.data().p202);
@@ -369,6 +422,9 @@ if (isset($_SESSION['user'])){
                         $('#p402').val(doc.data().p402);
                         $('#p502').val(doc.data().p502);
                         $('#p602').val(doc.data().p602);
+                        $('#p702').val(doc.data().p702);
+                        $('#p802').val(doc.data().p802);
+                        $('#p902').val(doc.data().p902);
 
                         $('#p103').val(doc.data().p103);
                         $('#p203').val(doc.data().p203);
@@ -376,6 +432,9 @@ if (isset($_SESSION['user'])){
                         $('#p403').val(doc.data().p403);
                         $('#p503').val(doc.data().p503);
                         $('#p603').val(doc.data().p603);
+                        $('#p703').val(doc.data().p703);
+                        $('#p803').val(doc.data().p803);
+                        $('#p903').val(doc.data().p903);
 
                     });
                     e.preventDefault();
@@ -393,6 +452,9 @@ if (isset($_SESSION['user'])){
                         $('#p4').val(doc.data().p4);
                         $('#p5').val(doc.data().p5);
                         $('#p6').val(doc.data().p6);
+                        $('#p7').val(doc.data().p7);
+                        $('#p8').val(doc.data().p8);
+                        $('#p9').val(doc.data().p9);
 
                         $('#p102').val(doc.data().p102);
                         $('#p202').val(doc.data().p202);
@@ -400,6 +462,9 @@ if (isset($_SESSION['user'])){
                         $('#p402').val(doc.data().p402);
                         $('#p502').val(doc.data().p502);
                         $('#p602').val(doc.data().p602);
+                        $('#p702').val(doc.data().p702);
+                        $('#p802').val(doc.data().p802);
+                        $('#p902').val(doc.data().p902);
 
                         $('#p103').val(doc.data().p103);
                         $('#p203').val(doc.data().p203);
@@ -407,7 +472,9 @@ if (isset($_SESSION['user'])){
                         $('#p403').val(doc.data().p403);
                         $('#p503').val(doc.data().p503);
                         $('#p603').val(doc.data().p603);
-
+                        $('#p703').val(doc.data().p703);
+                        $('#p803').val(doc.data().p803);
+                        $('#p903').val(doc.data().p903);
                     }
 
 

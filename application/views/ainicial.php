@@ -1,4 +1,11 @@
 <!-- start banner Area -->
+<?php
+if (isset($_SESSION['user'])){
+    $disabled="";
+}else{
+    $disabled="disabled";
+}
+?>
 <section class="banner-area relative" id="home">
     <div class="overlay overlay-bg"></div>
     <div class="container">
@@ -64,6 +71,7 @@
                 <tr>
                     <th>Colegio</th>
                     <th>Estudiantes</th>
+                    <th>Intentos</th>
                     <th>Opciones</th>
                 </tr>
                 </thead>
@@ -131,54 +139,145 @@
             <div class="modal-body">
                 <form id="notas">
                     <div class="form-group">
-                        <label for="p1">Una pieza de fruta totalmente retirada de su dispositivo de soporte.</label>
-                        <input type="number" class="form-control" id="p1" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">10 puntos por cada una.
-                            Total máximo: 40
+                        <label for="p1">Un niño ha sido totalmente sacado de su casa por el robot</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p102" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p103" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 15.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p2">Una pieza de fruta perfecta (pelota roja) completamente dentro de la Tienda de Alimentos (área roja). El robot ha transportado la fruta roja al área roja.</label>
-                        <input type="number" class="form-control" id="p2" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">10 puntos por cada una.
-                            Total máximo: 20
+                        <label for="p2">La fruta ha sido totalmente sacada fuera de la frutería por el robot.</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p2" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p202" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p203" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 5.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p3">Una pieza de fruta perfecta (pelota roja) completamente dentro de la Tienda de Alimentos (área roja). La fruta fue llevada manualmente desde un Área de Inicio a un área roja.</label>
-                        <input type="number" class="form-control" id="p3" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">5 puntos por cada una.
-                            Total máximo: 10
+                        <label for="p3">Por cada niño que esté completamente dentro del rectángulo punteado del Patio de la Escuela y no esté tocando la Escuela.</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p3" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p302" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p303" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 15.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p4">Una pieza de fruta fea (pelota azul) completamente dentro de la Fábrica de Jugos (área azul). El robot ha transportado la fruta azul al área azul.</label>
-                        <input type="number" class="form-control" id="p4" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">10 puntos por cada una.
-                            Total máximo: 20
+                        <label for="p4">Los tres niños están completamente dentro del rectángulo punteado del Patio de la Escuela y no están tocando la Escuela.</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p4" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p402" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p403" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 10.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p5">Una pieza de fruta fea (pelota azul) completamente dentro de la Fábrica de Jugos (área azul). La fruta fue llevada manualmente desde un Área de Inicio a un área azul.</label>
-                        <input type="number" class="form-control" id="p5" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">5 puntos por cada una.
-                            Total máximo: 10
+                        <label for="p5">Por cada niño que esté completamente dentro del rectángulo punteado del Patio de la Escuela, pero esté tocando la Escuela.</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p5" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p502" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p503" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 15.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p6">Cada dispositivo de soporte no ha sido movido completamente fuera del Área de Granja donde estuvo colocado originalmente. Sólo se obtendrá estos puntos si el puntaje por las otras misiones es mayor a cero.</label>
-                        <input type="number" class="form-control" id="p6" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">5 puntos por cada una.
-                            Total máximo: 20
+                        <label for="p6">La fruta está completamente dentro de la Escuela.</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p6" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p602" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p603" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 10.
                         </small>
                     </div>
                     <div class="form-group">
-                        <label for="p7">El robot se detiene completamente dentro del Área de Inicio Circular. Sólo se obtendrá estos puntos si el puntaje por las otras misiones es mayor a cero.</label>
-                        <input type="number" class="form-control" id="p7" placeholder="00">
-                        <small id="emailHelp" class="form-text text-muted">20 puntos.
+                        <label for="p7">La fruta está completamente dentro del rectángulo punteado del Patio de la Escuela y no está completamente dentro de la Escuela.</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p7" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p702" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p703" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 5.
                         </small>
                     </div>
-
+                    <div class="form-group">
+                        <label for="p8">Durante el transporte de la fruta a través del Patio de la Escuela, la luz del robot ha parpadeado y emitido un sonido en señal de precaución. </label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p8" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p802" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p803" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 10.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p9">Por cada pelota no removida de su barrera, donde estaba ubicada inicialmente. (Sólo se obtiene estos puntos si se ganaron otros puntos).</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p9" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p902" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p903" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 10.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p10">Por cada barrera o vehículo que no esté completamente movido de su ubicación original. (Sólo se obtiene estos puntos si se ganaron otros puntos).</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p10" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1002" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1003" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Cada una 5. Total 25.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p11">El robot se detiene completamente dentro del garaje (Sólo se obtiene estos puntos si se ganaron otros puntos).</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p11" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1102" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1103" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 20.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p12">La Estación de Carga está completamente dentro el garaje y en estado Encendido cuando el robot de detiene completamente dentro del Garaje. Sólo se obtiene estos puntos si se asignaron otros puntos.</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p12" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1202" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1203" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 5.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p13">Evaluación de conocimiento. Viene de la otra hoja de evaluación. Sólo se hace una vez y vale para las dos rondas.</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p13" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1302" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1303" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">Total 50.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="p14">Regla sopresa</label>
+                        <div class="row">
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p14" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1402" placeholder="00"></div>
+                            <div class="col-4"><input type="number" <?=$disabled?> class="form-control" id="p1403" placeholder="00"></div>
+                        </div>
+                        <small id="emailHelp" class="form-text text-muted">De 0 a 30.
+                        </small>
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         <?php if (isset($_SESSION['user'])):?>
@@ -241,7 +340,9 @@
             return false;
         });
         $('#notas').submit(function (e) {
-            db.doc(id).set({
+
+            db.doc(id).set(
+                {
                 colegio: colegio,
                 estudiante1: estudiante1,
                 estudiante2: estudiante2,
@@ -251,21 +352,108 @@
                 p4:$('#p4').val(),
                 p5:$('#p5').val(),
                 p6:$('#p6').val(),
-                p7:$('#p7').val()
-            }).then(refDoc => {
+                p7:$('#p7').val(),
+                p8:$('#p8').val(),
+                p9:$('#p9').val(),
+                p10:$('#p10').val(),
+                p11:$('#p11').val(),
+                p12:$('#p12').val(),
+                p13:$('#p13').val(),
+                p14:$('#p14').val(),
+                    p102:$('#p102').val(),
+                    p202:$('#p202').val(),
+                    p302:$('#p302').val(),
+                    p402:$('#p402').val(),
+                    p502:$('#p502').val(),
+                    p602:$('#p602').val(),
+                    p702:$('#p702').val(),
+                    p802:$('#p802').val(),
+                    p902:$('#p902').val(),
+                    p1002:$('#p1002').val(),
+                    p1102:$('#p1102').val(),
+                    p1202:$('#p1202').val(),
+                    p1302:$('#p1302').val(),
+                    p1402:$('#p1402').val(),
+                    p103:$('#p103').val(),
+                    p203:$('#p203').val(),
+                    p303:$('#p303').val(),
+                    p403:$('#p403').val(),
+                    p503:$('#p503').val(),
+                    p603:$('#p603').val(),
+                    p703:$('#p703').val(),
+                    p803:$('#p803').val(),
+                    p903:$('#p903').val(),
+                    p1003:$('#p1003').val(),
+                    p1103:$('#p1103').val(),
+                    p1203:$('#p1203').val(),
+                    p1303:$('#p1303').val(),
+                    p1403:$('#p1403').val(),
+            }
+            ).then(refDoc => {
                 toastr.success('Notas guardadas!');
                 $('#notas').modal('hide');
             });
             return false;
+
         });
-        var id,colegio,estudiante1,estudiante2;
+        var id='a',colegio,estudiante1,estudiante2;
         function datos(){
             db.onSnapshot(function(querySnapshot) {
                 table.clear().draw();
+
                 querySnapshot.forEach(function(doc) {
+                    var puntos=0;
+                    var puntos2=0;
+                    var puntos3=0;
+                    puntos=puntos+
+                        parseInt( doc.data().p1)+
+                        parseInt( doc.data().p2)+
+                        parseInt( doc.data().p3)+
+                        parseInt( doc.data().p4)+
+                        parseInt( doc.data().p5)+
+                        parseInt( doc.data().p6)+
+                        parseInt( doc.data().p7)+
+                        parseInt( doc.data().p8)+
+                        parseInt( doc.data().p9)+
+                        parseInt( doc.data().p10)+
+                        parseInt( doc.data().p11)+
+                        parseInt( doc.data().p12)+
+                        parseInt( doc.data().p13)+
+                        parseInt( doc.data().p14);
+                    puntos2=puntos2+
+                        parseInt( doc.data().p102)+
+                        parseInt( doc.data().p202)+
+                        parseInt( doc.data().p302)+
+                        parseInt( doc.data().p402)+
+                        parseInt( doc.data().p502)+
+                        parseInt( doc.data().p602)+
+                        parseInt( doc.data().p702)+
+                        parseInt( doc.data().p802)+
+                        parseInt( doc.data().p902)+
+                        parseInt( doc.data().p1002)+
+                        parseInt( doc.data().p1102)+
+                        parseInt( doc.data().p1202)+
+                        parseInt( doc.data().p1302)+
+                        parseInt( doc.data().p1402);
+                    puntos3=puntos3+
+                        parseInt( doc.data().p103)+
+                        parseInt( doc.data().p203)+
+                        parseInt( doc.data().p303)+
+                        parseInt( doc.data().p403)+
+                        parseInt( doc.data().p503)+
+                        parseInt( doc.data().p603)+
+                        parseInt( doc.data().p703)+
+                        parseInt( doc.data().p803)+
+                        parseInt( doc.data().p903)+
+                        parseInt( doc.data().p1003)+
+                        parseInt( doc.data().p1103)+
+                        parseInt( doc.data().p1203)+
+                        parseInt( doc.data().p1303)+
+                        parseInt( doc.data().p1403);
                                     table.row.add( [
                                         doc.data().colegio,
                                         '1-'+doc.data().estudiante1+' <br> 2-'+doc.data().estudiante2,
+                                        '1= '+puntos+'<br>2= '+ puntos2+'<br>3= '+puntos3,
                                         '<button class="btn btn-warning p-1 modificar" '+ver+' data-id="'+doc.id+'"> <i class="fa fa-pencil"></i> Modificar</button>'+
                                         '<button class="btn btn-danger p-1 eliminar" '+ver+' data-id="'+doc.id+'"> <i class="fa fa-pencil"></i> Eliminar</button>'+
                                         '<button class="btn btn-info p-1 notas" data-id="'+doc.id+'"> <i class="fa fa-eye"></i> Notas</button>'
@@ -306,10 +494,104 @@
                         $('#p5').val(doc.data().p5);
                         $('#p6').val(doc.data().p6);
                         $('#p7').val(doc.data().p7);
+                        $('#p8').val(doc.data().p8);
+                        $('#p9').val(doc.data().p9);
+                        $('#p10').val(doc.data().p10);
+                        $('#p11').val(doc.data().p11);
+                        $('#p12').val(doc.data().p12);
+                        $('#p13').val(doc.data().p13);
+                        $('#p14').val(doc.data().p14);
+
+                        $('#p102').val(doc.data().p102);
+                        $('#p202').val(doc.data().p202);
+                        $('#p302').val(doc.data().p302);
+                        $('#p402').val(doc.data().p402);
+                        $('#p502').val(doc.data().p502);
+                        $('#p602').val(doc.data().p602);
+                        $('#p702').val(doc.data().p702);
+                        $('#p802').val(doc.data().p802);
+                        $('#p902').val(doc.data().p902);
+                        $('#p1002').val(doc.data().p1002);
+                        $('#p1102').val(doc.data().p1102);
+                        $('#p1202').val(doc.data().p1202);
+                        $('#p1302').val(doc.data().p1302);
+                        $('#p1402').val(doc.data().p1402);
+
+                        $('#p103').val(doc.data().p103);
+                        $('#p203').val(doc.data().p203);
+                        $('#p303').val(doc.data().p303);
+                        $('#p403').val(doc.data().p403);
+                        $('#p503').val(doc.data().p503);
+                        $('#p603').val(doc.data().p603);
+                        $('#p703').val(doc.data().p703);
+                        $('#p803').val(doc.data().p803);
+                        $('#p903').val(doc.data().p903);
+                        $('#p1003').val(doc.data().p1003);
+                        $('#p1103').val(doc.data().p1103);
+                        $('#p1203').val(doc.data().p1203);
+                        $('#p1303').val(doc.data().p1303);
+                        $('#p1403').val(doc.data().p1403);
+
                     });
                     e.preventDefault();
                 });
+                /*inicio*/
+                db.doc(id).get().then(function (doc) {
+                    if (typeof doc.data() !== 'undefined') {
+                        $('#titulo').html(doc.data().colegio+'<br>'+doc.data().estudiante1+'<br>'+doc.data().estudiante2);
+                        colegio=doc.data().colegio;
+                        estudiante1=doc.data().estudiante1;
+                        estudiante2=doc.data().estudiante2;
+                        $('#p1').val(doc.data().p1);
+                        $('#p2').val(doc.data().p2);
+                        $('#p3').val(doc.data().p3);
+                        $('#p4').val(doc.data().p4);
+                        $('#p5').val(doc.data().p5);
+                        $('#p6').val(doc.data().p6);
+                        $('#p7').val(doc.data().p7);
+                        $('#p8').val(doc.data().p8);
+                        $('#p9').val(doc.data().p9);
+                        $('#p10').val(doc.data().p10);
+                        $('#p11').val(doc.data().p11);
+                        $('#p12').val(doc.data().p12);
+                        $('#p13').val(doc.data().p13);
+                        $('#p14').val(doc.data().p14);
 
+                        $('#p102').val(doc.data().p102);
+                        $('#p202').val(doc.data().p202);
+                        $('#p302').val(doc.data().p302);
+                        $('#p402').val(doc.data().p402);
+                        $('#p502').val(doc.data().p502);
+                        $('#p602').val(doc.data().p602);
+                        $('#p702').val(doc.data().p702);
+                        $('#p802').val(doc.data().p802);
+                        $('#p902').val(doc.data().p902);
+                        $('#p1002').val(doc.data().p1002);
+                        $('#p1102').val(doc.data().p1102);
+                        $('#p1202').val(doc.data().p1202);
+                        $('#p1302').val(doc.data().p1302);
+                        $('#p1402').val(doc.data().p1402);
+
+                        $('#p103').val(doc.data().p103);
+                        $('#p203').val(doc.data().p203);
+                        $('#p303').val(doc.data().p303);
+                        $('#p403').val(doc.data().p403);
+                        $('#p503').val(doc.data().p503);
+                        $('#p603').val(doc.data().p603);
+                        $('#p703').val(doc.data().p703);
+                        $('#p803').val(doc.data().p803);
+                        $('#p903').val(doc.data().p903);
+                        $('#p1003').val(doc.data().p1003);
+                        $('#p1103').val(doc.data().p1103);
+                        $('#p1203').val(doc.data().p1203);
+                        $('#p1303').val(doc.data().p1303);
+                        $('#p1403').val(doc.data().p1403);
+
+                    }
+
+
+                });
+                /*fin*/
                 });
         }
 

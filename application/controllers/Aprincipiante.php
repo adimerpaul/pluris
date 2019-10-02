@@ -1,8 +1,8 @@
 <?php
-class Ainicial extends CI_Controller{
+class Aprincipiante extends CI_Controller{
     function index(){
         $this->load->view('templates/header');
-        $this->load->view('ainicial');
+        $this->load->view('aprincipiante');
         $this->load->view('templates/footer');
     }
 }
