@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb5e5e39-c876-43ff-9e95-fe226d655eb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/controllers/Aavanzada.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/controllers/Aintermedia.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/controllers/Aprincipiante.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/controllers/Bavanzada.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/controllers/Cavanzada.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/controllers/Cintermedia.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/controllers/Cprincipiante.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/Aavanzada.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/Bavanzada.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/aintermedia.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/aprincipiante.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/cavanzada.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/cintermedia.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/cprincipiante.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Ainicial.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Ainicial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/ainicial.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/ainicial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/bintermedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/bintermedia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Aavanzada.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Aavanzada.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +60,7 @@
       <workItem from="1569336061362" duration="3760000" />
       <workItem from="1569415843322" duration="7030000" />
       <workItem from="1569549543278" duration="7594000" />
-      <workItem from="1569959522325" duration="13005000" />
+      <workItem from="1569959522325" duration="13432000" />
     </task>
     <servers />
   </component>
